@@ -1,0 +1,70 @@
+#! Answers to Tuesday Homework Unix Exercises #1
+#! By: Wen Yu (Amy) Wong
+
+##! > Indicates the Question
+##! $ Commands used to answer the Question
+
+> Create a files directory 
+$ cd /rsgrps/bh_class/wwong3/biosys-analytics/
+$ mkdir files
+
+> Create a file called "answers.txt"
+$ touch answers.txt
+
+> Download usdeclar.txt from web
+$ wget https://www.constitution.org/usdeclar.txt
+
+> Download const.txt from web
+$ wget https://www.usconstitution.net/const.txt
+
+> Download 25344-0.txt as scarlet.txt from web
+$ wget -o /rsgrps/bh_class/wwong3/biosys-analytics/files/scarlet.txt 
+https://www.gutenberg.org/files/25344/25344-0.txt
+
+> Show a long listing of the files
+$ ls -l
+
+> Show a command to count the number of lines in each file and a total count of all lines
+$ wc -l *.txt
+
+> Show a command that will find the files in this directory which are larger than 50k
+$ find . -type f –size 50k
+
+> Show a command that will tell you what kind of file that Unix considers "const.txt"
+$ file const.txt 
+
+> Show a single command that will print the MD5 sum of all the text files (without mentioning each
+  file individually)
+$ md5sum *.txt
+
+> Show the output of a command that will tell you how much disk space in kilobytes (K) is being used
+$ df -k
+
+> Show a command to count how many lines of text contain the word "judge" (irrespective of case) in 
+  all the files
+$ grep –io “judge” *.txt|wc -l
+
+> Show a command that will display only the names of the files that contain the word "human"
+$ grep –il “human” *.txt
+
+> Show a single command that will count the number of times the word "scarlet" appears in 
+ "scarlet.txt" (case-insensitive); that is, not the number of lines that contain "scarlet" but each
+  occurrence of the word
+$ grep -i “scarlet” scarlet.txt | wc -c
+
+> Show a single command that will take the first 15 lines from each file and append them into a new 
+  file called "foo"
+$ head –15 *.txt >> foo
+
+> Show a command that shows how many lines are in "foo"
+$ wc -l foo 
+ 
+> You might have expected that the total number of lines in the previous question would be 45 (15 * 3), 
+  but it should not be. Why is it more or less?
+$ It is more because...
+
+> Remove the file called "foo"
+$ rm -i foo
+
+> Do "history > cmds"
+$ history > cmds
