@@ -50,7 +50,7 @@ $ grep –il “human” *.txt
 > Show a single command that will count the number of times the word "scarlet" appears in 
  "scarlet.txt" (case-insensitive); that is, not the number of lines that contain "scarlet" but each
   occurrence of the word
-$ grep -i “scarlet” scarlet.txt | wc -c
+$ grep -io “scarlet” scarlet.txt | wc -l
 
 > Show a single command that will take the first 15 lines from each file and append them into a new 
   file called "foo"
@@ -61,7 +61,9 @@ $ wc -l foo
  
 > You might have expected that the total number of lines in the previous question would be 45 (15 * 3), 
   but it should not be. Why is it more or less?
-$ It is more because...
+$ There are more lines than expected because when the files were appendeded, it provided information
+  of which file the "head -15" text came from. Additionally, there are empty lines to make it more human
+  readable. 
 
 > Remove the file called "foo"
 $ rm -i foo
