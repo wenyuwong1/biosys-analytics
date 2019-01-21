@@ -14,51 +14,143 @@ $ touch answers.txt
 > Download usdeclar.txt from web
 $ wget https://www.constitution.org/usdeclar.txt
 
+--2019-01-20 20:21:17--  https://www.constitution.org/usdeclar.txt
+Resolving www.constitution.org... 52.52.2.146, 52.52.214.82, 52.52.39.236, ...
+Connecting to www.constitution.org|52.52.2.146|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: “usdeclar.txt”
+
+    [ <=>                                                               ] 8,685       --.-K/s   in 0s      
+
+2019-01-20 20:21:17 (52.6 MB/s) - “usdeclar.txt” saved [8685]
+
+
 > Download const.txt from web
 $ wget https://www.usconstitution.net/const.txt
 
+--2019-01-20 20:21:44--  https://www.usconstitution.net/const.txt
+Resolving www.usconstitution.net... 52.52.207.176
+Connecting to www.usconstitution.net|52.52.207.176|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: “const.txt”
+
+    [ <=>                                                               ] 45,119      --.-K/s   in 0.04s   
+
+2019-01-20 20:21:44 (1.07 MB/s) - “const.txt” saved [45119]
+
 > Download 25344-0.txt as scarlet.txt from web
-$ wget -o /rsgrps/bh_class/wwong3/biosys-analytics/files/scarlet.txt 
-https://www.gutenberg.org/files/25344/25344-0.txt
+$ wget -O scarlet.txt https://www.gutenberg.org/files/25344/25344-0.txt
+
+--2019-01-20 20:25:15--  https://www.gutenberg.org/files/25344/25344-0.txt
+Resolving www.gutenberg.org... 152.19.134.47, 2610:28:3090:3000:0:bad:cafe:47
+Connecting to www.gutenberg.org|152.19.134.47|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 525464 (513K) [text/plain]
+Saving to: “scarlet.txt”
+
+100%[==================================================================>] 525,464      861K/s   in 0.6s    
+
+2019-01-20 20:25:15 (861 KB/s) - “scarlet.txt” saved [525464/525464]
+
 
 > Show a long listing of the files
 $ ls -l
 
+total 600
+-rw-r--r-- 1 wwong3 bh_class   2460 Jan 19 09:31 answers.txt
+-rw-r--r-- 1 wwong3 bh_class  14775 Jan 18 08:38 cmds
+-rw-r--r-- 1 wwong3 bh_class  45119 Jan 18 11:58 const.txt
+-rw-r--r-- 1 wwong3 bh_class 525464 Jan 23  2015 scarlet.txt
+-rw-r--r-- 1 wwong3 bh_class   8685 Jan 18 11:58 usdeclar.txt
+
 > Show a command to count the number of lines in each file and a total count of all lines
 $ wc -l *.txt
 
+   872 const.txt
+  9120 scarlet.txt
+   176 usdeclar.txt
+ 10168 total
+
+
 > Show a command that will find the files in this directory which are larger than 50k
-$ find . -type f –size 50k
+$ find . -type f –size +50k
+
+./scarlet.txt
 
 > Show a command that will tell you what kind of file that Unix considers "const.txt"
 $ file const.txt 
+
+const.txt: ASCII English text
 
 > Show a single command that will print the MD5 sum of all the text files (without mentioning each
   file individually)
 $ md5sum *.txt
 
+f66a8165c621d48bac2216b2f31e8742  const.txt
+4958553be1483e4cbd615ce5fa73f6ab  scarlet.txt
+7f54939b30ae7b6d45d473a4c82a41b0  usdeclar.txt
+
 > Show the output of a command that will tell you how much disk space in kilobytes (K) is being used
 $ df -k
+
+Filesystem               1K-blocks          Used    Available Use% Mounted on
+/dev/sda2                944785812      33492540    863294196   4% /
+none                      98884376             0     98884376   0% /dev/shm
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs1/rsgrps
+                     1543570980864 1200122851328 343448129536  78% /rsgrps
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/pbs
+                       35970351104    6848186368  29122164736  20% /pbs
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/Bright_cm_shared
+                       35970351104    6848186368  29122164736  20% /cm/shared
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs1/bio5
+                        4294967296     410201088   3884766208  10% /bio5
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/unsupported
+                       35970351104    6848186368  29122164736  20% /unsupported
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs3/extra
+                      540897443840   46962293760 493935150080   9% /extra
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs3/xdisk
+                       10737418240             0  10737418240   0% /xdisk
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/home
+                       35970351104    6848186368  29122164736  20% /home
 
 > Show a command to count how many lines of text contain the word "judge" (irrespective of case) in 
   all the files
 $ grep –io “judge” *.txt|wc -l
 
+22
+
 > Show a command that will display only the names of the files that contain the word "human"
 $ grep –il “human” *.txt
 
+scarlet.txt
+usdeclar.txt
+
 > Show a single command that will count the number of times the word "scarlet" appears in 
  "scarlet.txt" (case-insensitive); that is, not the number of lines that contain "scarlet" but each
-  occurrence of the word
-$ grep -io “scarlet” scarlet.txt | wc -l
+  occurence of the word
+$ grep -io "scarlet" scarlet.txt | wc -w
+
+125
 
 > Show a single command that will take the first 15 lines from each file and append them into a new 
   file called "foo"
 $ head –15 *.txt >> foo
+$ ls
+
+-rw-r--r-- 1 wwong3 bh_class   2460 Jan 19 09:31 answers.txt
+-rw-r--r-- 1 wwong3 bh_class  14775 Jan 18 08:38 cmds
+-rw-r--r-- 1 wwong3 bh_class  45119 Jan 18 11:58 const.txt
+-rw-r--r-- 1 wwong3 bh_class   1730 Jan 20 20:35 foo
+-rw-r--r-- 1 wwong3 bh_class 525464 Jan 23  2015 scarlet.txt
+-rw-r--r-- 1 wwong3 bh_class   8685 Jan 18 11:58 usdeclar.txt
 
 > Show a command that shows how many lines are in "foo"
 $ wc -l foo 
  
+50 foo
+
 > You might have expected that the total number of lines in the previous question would be 45 (15 * 3), 
   but it should not be. Why is it more or less?
 $ There are more lines than expected because when the files were appendeded, it provided information
@@ -67,6 +159,8 @@ $ There are more lines than expected because when the files were appendeded, it 
 
 > Remove the file called "foo"
 $ rm -i foo
+
+rm: remove regular file `foo'? y
 
 > Do "history > cmds"
 $ history > cmds
