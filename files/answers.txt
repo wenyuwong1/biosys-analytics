@@ -95,25 +95,7 @@ f66a8165c621d48bac2216b2f31e8742  const.txt
 > Show the output of a command that will tell you how much disk space in kilobytes (K) is being used
 $ df -k
 
-Filesystem               1K-blocks          Used    Available Use% Mounted on
-/dev/sda2                944785812      33492540    863294196   4% /
-none                      98884376             0     98884376   0% /dev/shm
-hpc-nfs0-10g.hpc.arizona.edu:/gsfs1/rsgrps
-                     1543570980864 1200122851328 343448129536  78% /rsgrps
-hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/pbs
-                       35970351104    6848186368  29122164736  20% /pbs
-hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/Bright_cm_shared
-                       35970351104    6848186368  29122164736  20% /cm/shared
-hpc-nfs0-10g.hpc.arizona.edu:/gsfs1/bio5
-                        4294967296     410201088   3884766208  10% /bio5
-hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/unsupported
-                       35970351104    6848186368  29122164736  20% /unsupported
-hpc-nfs0-10g.hpc.arizona.edu:/gsfs3/extra
-                      540897443840   46962293760 493935150080   9% /extra
-hpc-nfs0-10g.hpc.arizona.edu:/gsfs3/xdisk
-                       10737418240             0  10737418240   0% /xdisk
-hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/home
-                       35970351104    6848186368  29122164736  20% /home
+608K
 
 > Show a command to count how many lines of text contain the word "judge" (irrespective of case) in 
   all the files
