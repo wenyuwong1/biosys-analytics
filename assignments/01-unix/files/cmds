@@ -1,0 +1,536 @@
+  475  ls
+  476  whoami
+  477  w
+  478  man
+  479  man ls
+  480  ls -l
+  481  echo "Hello Marissa"
+  482  echo "Hello world"
+  483  echo hello
+  484  Hello cow hello
+  485  env
+  486  echo user
+  487  echo $user
+  488  printenv
+  489  type ssh
+  490  which ssh
+  491  touch food
+  492  ls -l
+  493  pwd
+  494  ls 
+  495  ls -h 
+  496  ls -lh
+  497  rm -i food
+  498  ls
+  499  bang l
+  500  ls
+  501  man find
+  502  clear
+  503  find --help
+  504  clear
+  505  pwd
+  506  cd 
+  507  cd /
+  508  ls
+  509  touch food
+  510  ls
+  511  ls -l
+  512  clear
+  513  pwd
+  514  cd
+  515  ls
+  516  cd ~
+  517  ls
+  518  cd `/
+  519  echo home
+  520  home
+  521  echo home
+  522  ls
+  523  top
+  524  clear
+  525  ps
+  526  ps -fu user
+  527  ps -fu USER
+  528  clear
+  529  ps -fu wwong3
+  530  sudo
+  531  clear
+  532  bc
+  533  find du
+  534  du -shc
+  535  w >> who
+  536  ls -l
+  537  ls -l who
+  538  ls -lh who
+  539  cat < who|head
+  540  ls
+  541  rm who
+  542  ls
+  543  tree
+  544  tree -d
+  545  fortune | cowsay
+  546  clear
+  547  SECRET="i like cake"
+  548  echo $SECRET
+  549  unset SECRET
+  550  ls
+  551  echo $SECRET
+  552  ls
+  553  echo path
+  554  echo $PATH
+  555  export PATH=/rsgrps/bh_class/bin/:$PATH
+  556  echo "export PATH=/rsgrps/bh_class/bin/:$PATH"
+  557  tree
+  558  cd /rsgrps/bh_class/wwong3
+  559  ls
+  560  git remote -v
+  561  ls
+  562  ls biosys-analytics/
+  563  cd /rsgrps/bh_class/wwong3
+  564  ls
+  565  git pull
+  566  git
+  567  man git pull
+  568  man git-pull
+  569  cd /rsgrps/bh_class/
+  570  ls
+  571  cd wwong3/
+  572  ls
+  573  git remote -v
+  574  cd ..
+  575  git init
+  576  cd wwong3
+  577  git init
+  578  ls -l
+  579  git remote -v
+  580  ls -l
+  581  cd biosys-analytics/
+  582  git remote -v
+  583  git remote add upstream https://github.com/hurwitzlab/biosys-analytics.git
+  584  git remote -v
+  585  git fetch upstream
+  586  git checkout master
+  587  git merge upstream/master
+  588  ls -l
+  589  mkdir files
+  590  ls
+  591  cd files
+  592  touch answers.txt
+  593  ls
+  594  nnano answers.txt
+  595  wget https://www.constitution.org/usdeclar.txt
+  596  wget https://www.usconstitution.net/const.txt
+  597  wget -o scarlet.txt https://www.gutenberg.org/files/25344/25344-0.txt 
+  598  ls -l
+  599  cat scarlet.txt 
+  600  ls -l
+  601  rm 25344-0.txt 
+  602  rm scarlet.txt 
+  603  wget -O /rsgrps/bh_class/wwong3/biosys-analytics/files/scarlet.txt https://www.gutenberg.org/files/25344/25344-0.txt 
+  604  ls -l
+  605  cd /rsgrps/bh_class/wwong3/biosys-analytics/files/
+  606  ls
+  607  rm answers.txt
+  608  ls
+  609  ls -l
+  610  wc -l
+  611  wc -l *.txt 
+  612  man find
+  613  find . -type f -size +50k
+  614  find /rsgrps/bh_class/wwong3/biosys-analytics/files/ -type f -size +50k
+  615  file const.txt 
+  616  md5sum *.txt
+  617  md5sum const.txt 
+  618  find . -type f -name [ac]*.txt
+  619  find . -type f -name [cc]*.txt
+  620  find . -type f -name [cs]*.txt
+  621  find . -type f -name cs]*.txt
+  622  find . -type f -name s*.txt
+  623  find . -type f -name [cs]*.txt
+  624  find . -type f -name [sc]*.txt
+  625  find /rsgrps/bh_class/wwong3/biosys-analytics/files/ -type f -name [cs]*.txt
+  626  ls -l
+  627  ls /rsgrps/bh_class/wwong3/biosys-analytics/files/[cs]*.txt
+  628  ls ./[cs]*.txt
+  629  ls [cs]*.txt
+  630  ls [cs]*txt | wc -c 
+  631  wc -c const.txt 
+  632  wc -c scarlet.txt 
+  633  wc -c < ls [cs]*txt
+  634  grep -i [cs]*txt | wc -c
+  635  grep [cs]*txt
+  636  grep /rsgrps/bh_class/wwong3/biosys-analytics/files/[cs]*.txt
+  637  ls [cs]*.txt
+  638  grep "[cs]".txt
+  639  ls -al | grep '^[cs]'
+  640  ls -al | grep '^c'
+  641  grep "[cs]*.txt" /rsgrps/bh_class/wwong3/biosys-analytics/files/
+  642  grep "[cs]*.txt" /rsgrps/bh_class/wwong3/biosys-analytics/files
+  643  find /rsgrps/bh_class/wwong3/biosys-analytics/files/ -type f -name [cs]*.txt
+  644  ls | grep [cs]*.txt
+  645  ls|grep [cs]*
+  646  ls|grep [cs]*|wc -c
+  647  ls|grep "[cs]*"|wc -c
+  648  ls|grep "[cs]*"|
+  649  ls|grep "[cs]*"
+  650  ls|grep "[cs]*.txt"
+  651  ls|grep -e "c" -e "s"
+  652  grep 'c*|s*'
+  653  history >cmds
+  654  ls
+  655  rm cmds
+  656  ls
+  657  ls [cs]*
+  658  ls [cs]*.txt|wc -c
+  659  wc -c const.txt 
+  660  ls|wc -l
+  661  find /rsgrps/bh_class/wwong3/biosys-analytics/files/[ac]* 
+  662  find /rsgrps/bh_class/wwong3/biosys-analytics/files/[cs]*
+  663  find /rsgrps/bh_class/wwong3/biosys-analytics/files/[cs]*|wc -c
+  664  wc -c < find [cs]*
+  665  find [cs]*
+  666  find [cs]* > wc -c
+  667  find [cs]* | cat *|wc -c
+  668  wc -c const.txt 
+  669  wc -c scarlet.txt 
+  670  cat const.txt 
+  671  find [cs]*|cat|wc-c
+  672  find [cs]*|cat|wc -c
+  673  find [cs]*|cat *
+  674  find [cs]*|cat *|wc -c
+  675  cat const.txt |wc -c
+  676  cat scarlet.txt |wc -c
+  677  cd /rsgrps/bh_class/wwong3/biosys-analytics/files
+  678  ls
+  679  grep -i "$[aeiou]" scarlet.txt 
+  680  grep -i "^[aeiou]" scarlet.txt 
+  681  grep -i "^[aeiou]" scarlet.txt |wc -c
+  682  head scarlet.txt 
+  683  grep -i "^[aeiou]" scarlet.txt |wc -c
+  684  grep -i "^[aeiou]" scarlet.txt |wc -l
+  685  grep -in "^[aeiou]" scarlet.txt |wc -l
+  686  grep -in "^[aeiou]" scarlet.txt
+  687  grep -in "^[aeiou]" scarlet.txt | cut -fl -d:
+  688  grep -in "^[aeiou]" scarlet.txt | cut -f1 -d:
+  689  grep -in "^[aeiou]" scarlet.txt | cut -f1
+  690  grep -in "^[aeiou]" scarlet.txt | cut -d:1-
+  691  grep -in "^[aeiou]" scarlet.txt | cut -d: -f 1-
+  692  grep -in "^[aeiou]" scarlet.txt | cut -d: -f1
+  693  grep -in "^[aeiou]" scarlet.txt | cut -d: -f2
+  694  grep -in "^[aeiou]" scarlet.txt | cut -f2 -d:
+  695  grep -in "^[aeiou]" scarlet.txt | cut -f2 
+  696  grep -in "^[aeiou]" scarlet.txt | cut -f1 -d:
+  697  grep -in "^[aeiou]" scarlet.txt | cut -d[aeiou]
+  698  grep -in "^[aeiou]" scarlet.txt | cut -d:
+  699  grep -in "^[aeiou]" scarlet.txt | cut -d: -f1
+  700  grep -in "^[aeiou]" scarlet.txt | cut -d: -f2
+  701  grep -in "^[aeiou]" scarlet.txt | cut -c2
+  702  grep -in "^[aeiou]" scarlet.txt | cut -c-2
+  703  grep -in "^[aeiou]" scarlet.txt | cut -d:
+  704  grep -in "^[aeiou]" scarlet.txt | cut -d: -f1
+  705  grep -in "^[aeiou]" scarlet.txt | cut 
+  706  grep -in "^[aeiou]" scarlet.txt | cut -d: -f2
+  707  grep -in "^[aeiou]" scarlet.txt | cut -d: -f1
+  708  grep -in "^[aeiou]" scarlet.txt | cut -c -2
+  709  grep -in "^[aeiou]" scarlet.txt | cut -c 5-
+  710  grep -in "^[aeiou]" scarlet.txt | cut -d: -f1
+  711  grep -in "^[aeiou]" scarlet.txt | cut -d:* -f1
+  712  grep -in "^[aeiou]" scarlet.txt | cut -d: -f1
+  713  grep -in "^[aeiou]" scarlet.txt | grep -o "*:^"
+  714  grep -in "^[aeiou]" scarlet.txt | grep -i "*:[a-z]"
+  715  grep -in "^[aeiou]" scarlet.txt | grep -i "*:[a-z]"|wc -l
+  716  cd /rsgrps/bh_class/wwong3/biosys-analytics/files/
+  717  ls
+  718  cat wc
+  719  rm wc
+  720  ls -l
+  721  clear
+  722  find . -type f -name '[ac]'
+  723  find . -type f -name '[ac]'|echo
+  724  ls -l
+  725  ls [cs]*|cat *| wc -c
+  726  wc -c const.txt 
+  727  wc -c scarlet.txt 
+  728  cat *|grep -i "judge"|wc -l
+  729  cat *
+  730  grep -i "judge" const.txt 
+  731  grep -i "judge" const.txt | wc -l
+  732  grep -i "judge" scarlet.txt | wc -l
+  733  grep -i "judge" usdeclar.txt| wc -l
+  734  grep -i "judge" *.txt|wc -l
+  735  du
+  736  df 
+  737  find . -type f|grep -i "human" *
+  738  grep -i "human" *.txt |find . -type f
+  739  grep -i "human" const.txt 
+  740  grep -i "human" const.txt |wc -c
+  741  grep -i "human" scarlet.txt |wc -c
+  742  grep -i "human" usdeclar.txt |wc -c
+  743  grep -il "human" *.txt
+  744  grep "Article [0123456789]*]"
+  745  egrep "^Article [0123456789]*"
+  746  awk "Article [0-9]"
+  747  grep -c "^\s*$" const.txt 
+  748  grep -cx "[[:space:]]*" const.txt 
+  749  grep "[[:space:]]*" const.txt 
+  750  grep -cx "[[:space:]]*" const.txt 
+  751  clear
+  752  grep -c "[[:space:]]*" const.txt 
+  753  grep -cx "[[:space:]]*" const.txt 
+  754  grep -i "scarlet" scarlet.txt |wc -c
+  755  head -15 *txt >> foo
+  756  ls
+  757  cat foo
+  758  wc -l foo
+  759  cat foo |wc -l
+  760  rm foo
+  761  ls
+  762  touch foo
+  763  rm -i foo
+  764  grep -x "scarlet" scarlet.txt 
+  765  grep -cx "[aeiou]*" scarlet.txt 
+  766  grep -cxi "[aeiou]*" scarlet.txt 
+  767  grep -i "[aeiou]*" scarlet.txt 
+  768  grep -ic "[aeiou]*" scarlet.txt 
+  769  ls
+  770  cd /rsgrps/bh_class/wwong3/biosys-analytics/files
+  771  ls
+  772  grep -i "judge" *.txt|wc -w
+  773  wc -w const.txt 
+  774  wc -w scarlet.txt 
+  775  ls [cs]*.txt|cat *|wc -w
+  776  grep -i "judge" *.txt|wc -w
+  777  grep -i "judge" const.txt |wc -c
+  778  grep -i "judge" scarlet.txt |wc -c
+  779  grep -i "judge" usdeclar.txt |wc -c
+  780  grep -i "judge" usdeclar.txt
+  781  grep -i "judge" usdeclar.txt|wc -c
+  782  grep -io "judge" usdeclar.txt 
+  783  grep -io "judge" usdeclar.txt |wc -l
+  784  grep -io "judge" *.txt |wc -l
+  785  grep -io "judge" *.txt
+  786  touch word3
+  787  nano word3
+  788  touch word5
+  789  nano word5
+  790  ls [w]*|cat *
+  791  ls
+  792  ls w*|cat *
+  793  ls w*
+  794  cat w*
+  795  cat [cs]*|wc -w
+  796  wc -w const.txt 
+  797  wc -w scarlet.txt 
+  798  grep -il "human" *.txt
+  799  cat w*|wc -c
+  800  cat w*|wc -w
+  801  rm w*
+  802  ls
+  803  grep "^Article [[:space:]] [0-9]"
+  804  grep "^Article[[:space:]][0-9]"
+  805  grep -e "^Article[[:space:]][0-9]"
+  806  grep "^Article"
+  807  grep "^Article" scarlet.txt 
+  808  exit
+  809  cd /rsgrps/bh_class/
+  810  cd wwong3/biosys-analytics/files
+  811  ls
+  812  clear
+  813  ls [cs]*.txt|cat *
+  814  ls [cs]*.txt|cat *|wc -w
+  815  cat [cs]*|wc -w
+  816  ls
+  817  cat const.txt 
+  818  ls [cs]*.txt
+  819  ls
+  820  ls [cs]*.txt
+  821  n c
+  822  nedit c s
+  823  ls
+  824  pwd
+  825  mkdir temp
+  826  cd temp
+  827  echo 1 2 3 4 5 6
+  828  echo 1 2 3 4 5 6 > c
+  829  echo 1 2 3 4 5 6 7 8 9 10 > s
+  830  ls [cs]*.txt
+  831  ls [cs]
+  832  ls [cs] | wc
+  833  ls [cs] | wc -w
+  834  ls [cs] | cat |  wc -w
+  835  ls [cs] | cat 
+  836  ls [cs] | cat *
+  837  man cat
+  838  cat 
+  839  ls [cs]
+  840  cat `ls [cs]` 
+  841  cat `ls [cs]` | wc -w
+  842  u
+  843  cd ..
+  844  pwd
+  845  ll
+  846  rm -r temp/
+  847  cat `ls [cs]*.txt` | wc -w
+  848  pwd
+  849  grep -i "scarlet" scarlet.txt | cut -d:
+  850  grep -i "scarlet" scarlet.txt | cut -d: -f1
+  851  grep -i "scarlet" scarlet.txt | cut -f1 -d:
+  852  grep -i "scarlet" scarlet.txt 
+  853  grep -i "scarlet" scarlet.txt | wc -l
+  854  grep -i "^[aeiou]*" scarlet.txt | q
+  855  grep -i "^[aeiou]*" scarlet.txt 
+  856  grep -i "^[aeiou]" scarlet.txt 
+  857  grep -in "^[aeiou]" scarlet.txt 
+  858  grep -in "^[aeiou]" scarlet.txt | cut -d: -f1
+  859  grep -in "^[aeiou]" scarlet.txt
+  860  man cut
+  861  echo hello | cut -b 2
+  862  echo hello | cut -b 3
+  863  echo hello | cut -b 1
+  864  cut --help
+  865  cd /rsgrps/bh_class/wwong3/biosys-analytics/files/
+  866  ls
+  867  grep -in "^[aeiou]" scarlet.txt
+  868  man cut
+  869  man grep
+  870  grep -i "^[aeiou]" scarlet.txt
+  871  grep -i "^[aeiou]" scarlet.txt|cut -b 1
+  872  grep -i "^[aeiou]" scarlet.txt|cut -b 1|uniq -c
+  873  man uniq
+  874  grep -i "^[aeiou]" scarlet.txt|cut -b 1|sort|uniq -c
+  875  man sort
+  876  grep  "^[aeiou]" scarlet.txt|cut -b 1|sort|uniq -c
+  877  grep -i "^[aeiou]" scarlet.txt|cut -b 1|sort|uniq -c
+  878  cat scarlet.txt 
+  879  grep -i "^[aeiou]" scarlet.txt|cut -b 1|sort|uniq -c
+  880  man sort
+  881  grep -i "^[aeiou]" scarlet.txt|cut -b 1|sort|wc -l
+  882  grep -i "^[aeiou]" scarlet.txt|wc -l
+  883  python
+  884  grep -ie "^\s[aeiou]" scarlet.txt|wc -l
+  885  grep -ie "^\s[aeiou].*" scarlet.txt|wc -l
+  886  grep -ip "^\s[aeiou]" scarlet.txt|wc -l
+  887  man grep
+  888  grep -iP "^\s[aeiou]" scarlet.txt|wc -l
+  889  grep -iP "^\s[aeiou]" scarlet.txt
+  890  grep -iP "^\s*[aeiou]" scarlet.txt
+  891  grep -iP "^\s*[aeiou]" scarlet.txt|wc -l
+  892  `59+10+91+20+6+651+199+356+358+106`
+  893  (59+10+91+20+6+651+199+356+358+106)
+  894  grep -i "^[aeiou]" scarlet.txt|wc -l
+  895  ls
+  896  wget https://www.gutenberg.org/files/25344/25344-0.txt 
+  897  ls
+  898  grep -i "^[aeiou]" 25344-0.txt.txt|wc -l
+  899  grep -i "^[aeiou]" 25344-0.txt|wc -l
+  900  grep -i "^[aeiou]" 25344-0.txt| cut -b 1 |sort|uniq -c
+  901  awk '/Article[[:space:]][0-9]/' scarlet.txt 
+  902  awk '/Article[[:space:]][0-9]/' {print} scarlet.txt 
+  903  man awk
+  904  agrep "^Article;[[:space:]];[0-9]" scarlet.txt 
+  905  grep -e "^Article" --and -e "[[:space:]]" --and -e "[0-9]" scarlet.txt 
+  906  grep -e ^Article -e [[:space:]] -e [0-9]
+  907  grep -e ^Article -e [[:space:]] -e [0-9] scarlet.txt 
+  908  cd /rsgrps/bh_class/wwong3/biosys-analytics/files/
+  909  ls
+  910  grep -i "^[aeiou]" 25344-0.txt| cut -b 1 |sort|uniq -c
+  911  grep -i "^[aeiou]" 25344-0.txt| wc -l
+  912  grep -w "^Article\|[[:space]]\|[0-9]" scarlet.txt 
+  913  grep -e "^Article|[[:space:]]\[0-9]"
+  914  grep -e "^Article|[[:space:]]\[0-9]" scarlet.txt 
+  915  grep -e "^Article|[[:space:]]\[0-9]" const.txt 
+  916  grep -e "^Article\+\[0-9]" const.txt 
+  917  grep -e "^Article\s\[0-9]" const.txt 
+  918  man wc
+  919  wc const.txt 
+  920  man curl
+  921  man find
+  922  ps
+  923  htop
+  924  man env
+  925  man find
+  926  env user
+  927  env usr
+  928  env 
+  929  find -s
+  930  man find
+  931  env usr
+  932  env $USR
+  933  man env
+  934  clear
+  935  ls
+  936  open const.txt 
+  937  git pull master
+  938  git pull upstream master
+  939  cat > foo
+  940  cd /rsgrps/bh_class/wwong3/
+  941  ls
+  942  cd biosys-analytics/
+  943  ls
+  944  cd files/
+  945  ls
+  946  rm foo
+  947  cd files/
+  948  echo $PATH
+  949  clear
+  950  echo $PATH
+  951  $PATH=/foo:$PATH
+  952  PATH=/foo:$PATH
+  953  echo $PATH
+  954  clear
+  955  ls
+  956  cd ..
+  957  ls
+  958  cd 
+  959  ls
+  960  ls -a
+  961  echo $PATH
+  962  cd /rsgrps/bh_class/wwong3/
+  963  ls -a
+  964  cd 
+  965  ls
+  966  ls -a 
+  967  ls -h
+  968  ls -hl
+  969  cd /rsgrps/bh_class/wwong3/
+  970  ls
+  971  cd biosys-analytics/
+  972  ls -l
+  973  ls
+  974  cd /rsgrps/bh_class/wwong3/biosys-analytics/
+  975  cd files/
+  976  ls
+  977  clear
+  978  grep "^Article*[[:blank:]]*[0-9]" const.txt 
+  979  grep "^Article*[[:blank:]]*[0-9]" *.txt
+  980  grep -cx "[[:blank:]]" const.txt 
+  981  grep -cx "[[:space:]]" const.txt 
+  982  grep -cx "[[:space:]]*" const.txt 
+  983  ls
+  984  touch test.txt
+  985  nano test.txt 
+  986  grep -cx "[[:space:]]*" test.txt 
+  987  nano test.txt 
+  988  rm test.txt 
+  989  df -k
+  990  df -h
+  991  man df
+  992  df -k
+  993  df -hq
+  994  history > cmds
+  995  nano cmds
+  996  rm cmds
+  997  history > cmds
+  998  nano cmds
+  999  cd /rsgrps/bh_class/wwong3/biosys-analytics/files/
+ 1000  ls
+ 1001  rm 25344-0.txt 
+ 1002  touch answers.txt
+ 1003  nano answers.txt 
+ 1004  cat answers.txt 
+ 1005  nano answers.txt 
+ 1006  cat answers.txt 
+ 1007  ls
+ 1008  cat cmds
+ 1009  history 560 > cmds
+ 1010  head cmds
