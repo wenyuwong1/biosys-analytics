@@ -1,0 +1,46 @@
+#! Graduate Student Unix Exercise #1
+#! By: Wen Yu (Amy) Wong
+
+##! ">" Indicate the Question
+##! "$" Indicate the Answer to the Question
+
+> Show a single command that will calculate the number of words in the files whose names start 
+  with either "c" or "s"; the command must use a pattern and not list the files individually
+
+$ cat [cs]*.txt | wc -w
+
+94547
+
+> Show a command that will show the lines that begin with "Article" followed by a space and a 
+  number
+
+$ grep "^Article*[[:blank:]]*[0-9]" *.txt
+
+const.txt:Article 1.
+const.txt:Article 2.
+const.txt:Article 3.
+const.txt:Article 4.
+const.txt:Article 5.
+const.txt:Article 6.
+const.txt:Article 7.
+
+> Show a command that will count the number of empty lines in "const.txt"
+
+$ grep -cx "[[:space:]]*" const.txt 
+
+169
+
+> Show a command that will find all the lines in "scarlet.txt" that begin with a vowel 
+  (case-insensitive) and shows you a count by letter like the output in Table 1. 
+$ grep -i "^[aeiou]" scarlet.txt| cut -b 1 |sort|uniq -c
+
+    633 a
+     59 A
+    199 e
+     10 E
+    348 i
+     88 I
+    358 o
+     20 O
+     80 u
+      6 U
