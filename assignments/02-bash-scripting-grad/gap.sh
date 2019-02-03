@@ -28,7 +28,7 @@ elif [[ $# -gt 0 ]]; then
                 cat $RESULTS_FILE
         else
             	echo 'There are no countries starting with "'$EXP'"'
-		exit 1
+		exit 0
         fi
 	exit 0
 fi

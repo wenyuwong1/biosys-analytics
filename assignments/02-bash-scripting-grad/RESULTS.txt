@@ -1,0 +1,10 @@
+1	Uganda
+2	United_Kingdom
+3	United_States
+4	Uruguay
+5	Venezuela
+6	Vietnam
+7	West_Bank_and_Gaza
+8	Yemen_Rep
+9	Zambia
+10	Zimbabwe
