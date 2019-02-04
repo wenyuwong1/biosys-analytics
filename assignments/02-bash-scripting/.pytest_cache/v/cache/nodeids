@@ -1,7 +1,9 @@
 [
   "test.py::test_exists",
-  "test.py::test_usage",
-  "test.py::test_bad_input",
+  "test.py::test_usage_catn",
+  "test.py::test_usage_head",
+  "test.py::test_bad_input_catn",
+  "test.py::test_bad_input_head",
   "test.py::test_catn_run",
   "test.py::test_head_run"
 ]
