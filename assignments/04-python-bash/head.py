@@ -38,9 +38,12 @@ if len(args) >1:
 		sys.exit(1)
 
 #-------------------------------------
+if len(args)==1:
+	num_lines=3
+else:
+	num_lines=args[1]
 
-num_lines=args[1]
-def main(file=args[0], num_line=3):
+def main(file=file, num_lines=num_lines):
 	i=0
 	with open(file) as f:
 		for line in f.readlines():
