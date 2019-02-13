@@ -64,7 +64,14 @@ def main():
 		if not 0 < cell_arg <10:
 			print('Invalid cell "{}", must be 1-9'.format(cell_arg))
 			sys.exit(1)
-	
+
+
+# If --player or --cell is provided, it will error to indicate that both is needed
+	if len(player_arg) ==0 and cell_arg !=None or len(player_arg) !=0 and cell_arg ==None:
+		if (not player_arg) or (not cell_arg):
+			print('Must provide both --player and --cell')
+			sys.exit(1)	
+
 
 	board()
 
