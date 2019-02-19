@@ -93,7 +93,7 @@ def main():
 		protein_list += protein # Adds the found protein to the protein_list
 
 	# Creating store lists to correct output file
-	with open (output, "w") as outgoing: # Opening output file and "w"=writing
+	with open (output, "wt") as outgoing: # Opening output file and "wt"=writing
 		print(protein_list, file=outgoing) # Telling it to add the protein_list to file
 		print('Output written to "{}"'.format(output)) # Msg, output file is written
 		
