@@ -3,4 +3,8 @@ __pycache__
 *.swp
 *~
 *.epub
+<<<<<<< HEAD
 result.xml
+=======
+.cache
+>>>>>>> 3fb0f76b929366c905a82044c4d46203eb45b261
