@@ -49,13 +49,13 @@ def main():
 	dirs=args.directories
 	width=args.w
 	
-	# Determine if positional value is a directory
-	for dir in dirs:
-		if not os.path.isdir(dir):
-			print('"{}" is not a directory'.format(dir), file=sys.stderr)
+	# Print first lines of files in directories
+	for dir in dirs: # loop through the different directories in dir arguments
+		if not os.path.isdir(dir): # determine if it's a directory
+			print('"{}" is not a directory'.format(dir), file=sys.stderr) 
 			continue
 		dir_dict={} # create empty to store keys and f_line later
-		print(dir)
+		print(dir) # print directory name
 		files = os.listdir(dir)
 		for file in files:
 			path=os.path.join(dir,file) # path relative to script location
