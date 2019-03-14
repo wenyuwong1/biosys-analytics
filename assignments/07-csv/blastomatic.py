@@ -66,7 +66,7 @@ def main():
 		if not os.path.isfile(files):
 			die('"{}" is not a file'.format(files))
 
-	# adding headers to annotation files
+	# Figuring out the genus and species
 	species={}
 	genus={}
 
