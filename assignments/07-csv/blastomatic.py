@@ -73,14 +73,14 @@ def main():
 	with open(annot) as csvfile:
 		reader=csv.DictReader(csvfile)
 		for row in reader:
-			if not row['genus']=='':
+			if row['genus']=='': # if row has empty string, assign NA
+				genus[row['centroid']]='NA'
+			else:
 				genus[row['centroid']]=row['genus']
-			else:
-				genus[row['centroid']]='NA' #setting to NA if there's an empty string
-			if not row['species']=='':
-				species[row['centroid']]=row['species']
-			else:
+			if row['species']=='':
 				species[row['centroid']]='NA'
+			else:
+				species[row['centroid']]=row['species']
 
 	# Setting up the outfile, open here and adding the headers here
 	out_fh=open(outfile, 'wt') if outfile else sys.stdout
