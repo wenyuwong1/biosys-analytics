@@ -80,6 +80,7 @@ def main():
 	out_fh=open(outfile, 'wt')
 	
 	print('Processing "{}"'.format(file))
+
 	num_skips=0
 	num_found=0
 
