@@ -81,8 +81,8 @@ def main():
 	
 	print('Processing "{}"'.format(file))
 
-	num_skips=0
-	num_found=0
+	skipped=0
+	took=0
 
 	for record in SeqIO.parse(file, "swiss"):
 		annotations=record.annotations 
@@ -91,12 +91,12 @@ def main():
 			taxa_list=set([t.lower() for t in annotations['taxonomy']]) # extract out taxonomy from annotations and set
 
 			if keyword.intersection(word_list) and not skip.intersection(taxa_list): # intersection finds values in both lists
-				num_found+=1
+				took+=1
 				SeqIO.write(record, out_fh, 'fasta')
 			else:
-				num_skips+=1
+				skipped+=1
 	# Print('I give up')	
-	print('Done, skipped {} and took {}. See output in "{}".'.format(num_skips, num_found, outfile))
+	print('Done, skipped {} and took {}. See output in "{}".'.format(skipped, took, outfile))
 	
 
 	
