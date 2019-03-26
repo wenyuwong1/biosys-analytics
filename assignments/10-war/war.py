@@ -67,17 +67,17 @@ def main():
 
 	P1_wins=0
 	P2_wins=0
-	P1=[]
-	P2=[]
+	#P1=[]
+	#P2=[]
 	
 	# Pop off each card to each player
-	while len(deck)>0:
-		P1.append(deck.pop())
-		P2.append(deck.pop())
+	#while len(deck)>0:
+	#	P1.append(deck.pop())
+	#	P2.append(deck.pop())
 
-	while True:
-		Player1_card=P1.pop()
-		Player2_card=P2.pop()
+	while deck:
+		Player1_card=deck.pop()
+		Player2_card=deck.pop()
 		P1_value=num.index(Player1_card[1:])
 		P2_value=num.index(Player2_card[1:])
 				
@@ -88,10 +88,10 @@ def main():
 			P2_wins+=1
 			winner='P2'
 		else:
-			winner='War!'
+			winner='WAR!'
 		print('{:>3} {:>3} {}'.format(Player1_card, Player2_card, winner))
-		if len(P1)==0:
-			break
+		#if len(P1)==0:
+		#	break
 	if P1_wins > P2_wins:
 		won='Player 1 wins'
 	elif P2_wins > P1_wins:
