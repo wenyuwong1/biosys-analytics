@@ -7,4 +7,9 @@ __pycache__
 result.xml
 =======
 .cache
+<<<<<<< HEAD
 >>>>>>> 3fb0f76b929366c905a82044c4d46203eb45b261
+=======
+.ipynb_checkpoints
+.DS_Store
+>>>>>>> 7d4eabf60a3cdf8d98daacdaa1005ad51a2dc94f
