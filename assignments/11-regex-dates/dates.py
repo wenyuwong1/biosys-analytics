@@ -20,17 +20,20 @@ def main():
    
     input_date=sys.argv[1]
 
+    # For year, months, days
     date_re1=re.compile('(?P<year>\d{4})'
                         '([/-])?'
-                        '(?P<month>\d{,2})'
+                        '(?P<month>\d{1,2})'
                         '([/-]?)'
                         '(?P<day>\d{,2}?)'
                         '($|[A-Z].*|/)')
 
+    # For months and year only
     date_re2=re.compile('(?P<month>\d{1,2})'
                         '([/-])'
                         '(?P<year>\d{,2})')
 
+    # For months that has alphabets
     date_re3=re.compile('(?P<month>\D+)'
                         '([\s,-]+)'
                         '(?P<year>\d{,4})')
