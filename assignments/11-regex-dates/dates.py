@@ -73,14 +73,12 @@ def main():
         month=date2.group('month')
         if len(month)<2:
            month='0'+month
-        day='01'
-        print('{}-{}-{}'.format(year, month, day))
+        print('{}-{}-{}'.format(year, month, '01'))
     elif date3:
         year=date3.group('year')
         month=date3.group('month')
         month=mth.get(month[0:3])
-        day='01'
-        print('{}-{}-{}'.format(year, month, day))
+        print('{}-{}-{}'.format(year, month, '01'))
     else:
         print('No match')
 
