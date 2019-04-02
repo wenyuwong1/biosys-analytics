@@ -31,7 +31,7 @@ def main():
                         '([/-])'
                         '(?P<year>\d{,2})')
 
-    date_re3=re.compile('(?P<month>\w+)'
+    date_re3=re.compile('(?P<month>\D+)'
                         '([\s,-]+)'
                         '(?P<year>\d{,4})')
 
