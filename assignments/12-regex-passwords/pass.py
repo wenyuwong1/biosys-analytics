@@ -21,14 +21,10 @@ def main():
     pw=args[0]
     alt=args[1]
 
-    alt1=alt.upper()
-    alt2=alt[0].upper()+alt[1:]
+    alt1=pw.upper()
+    alt2=pw[0].upper()+pw[1:]
 
-    addition_char=re.compile('(.*)?'
-                             '[alt]'
-                             '(.*)?')
-
-    match=addition_char.match(alt)
+    addition_char=re.compile('.?'+pw+'.?')
 
     if pw==alt:
         print('ok')
@@ -36,7 +32,7 @@ def main():
         print('ok')
     elif alt==alt2:
         print('ok')
-    elif pw==match:
+    elif addition_char.match(alt):
         print('ok')
     else:
         print('nah')
