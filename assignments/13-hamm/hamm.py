@@ -91,8 +91,8 @@ def main():
 	hamm=0
 	for word1, word2 in combo:
 		d=dist(word1, word2)
-		logging.debug('s1={}, s2={}, d={}'.format(word1, word2, d))
 		hamm+=d
+		logging.debug(msg='s1= {}, s2= {}, d= {}'.format(word1, word2, d))
 	print(hamm)
 
 # --------------------------------------------------
