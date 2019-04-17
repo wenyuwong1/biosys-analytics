@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Author : wwong3
-Date   : 2019-04-15
+Date   : 2019-April-15
 Purpose: De Bruijn Graphs in Python
 """
 
@@ -71,18 +71,14 @@ def main():
 	for record in SeqIO.parse(fasta, 'fasta'):
 		seq_k=find_kmers(record.seq,k)
 		kmers_begin[record.id]=(seq_k[0])
-		kmers_end[seq_k[-1]]=record.id
-	
-	for key, value in kmers_begin.items():
-		if value in kmers_end.keys():
-			if kmers_end.get(value) != key:
-				print(kmers_end.get(value), key)
-			
+		kmers_end.setdefault(seq_k[-1], [])
+		kmers_end[seq_k[-1]].append(record.id)
 
-#	for kmer in kmers_begin.values():
-#		print(kmer)
-#		if kmer in kmers_end.values():
-#			print('yes')		
+	for id1, value in kmers_begin.items():
+		if value in kmers_end.keys():
+			for id2 in kmers_end[value]:
+				if id1 !=id2:
+					print(id2, id1)
 
 # --------------------------------------------------
 if __name__ == '__main__':
