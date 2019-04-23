@@ -2,39 +2,86 @@
 """
 Author : wwong3
 Date   : 2019-04-22
-Purpose: Converting User Time Inputs and Calculate Hourly Wage
+Purpose: Rock the Casbah
 """
 
-import os
+import argparse
 import sys
-import datetime, time
+import datetime,time
+
+# --------------------------------------------------
+def get_args():
+    """get command-line arguments"""
+    parser = argparse.ArgumentParser(
+        description='Making Money script',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+    parser.add_argument(
+        '-s',
+        '--start',
+	help='Military Time-In',
+	required=True,
+        metavar='HH:MM',
+        type=datetime.time.fromisoformat)
+
+    parser.add_argument(
+        '-e',
+        '--end',
+        help='Military Time-Out',
+        required=True,
+        metavar='HH:MM',
+        type=datetime.time.fromisoformat)
+
+    parser.add_argument(
+        '-w',
+        '--wage',
+        help='The wage a person earns (ie: 9.25)',
+        metavar='str',
+        type=str,
+        default=8)
+
+    return parser.parse_args()
+
+
+# --------------------------------------------------
+def warn(msg):
+    """Print a message to STDERR"""
+    print(msg, file=sys.stderr)
+
+
+# --------------------------------------------------
+def die(msg='Something bad happened'):
+    """warn() and exit with error"""
+    warn(msg)
+    sys.exit(1)
+
 
 # --------------------------------------------------
 def main():
-	start = input("Enter your time-in time in military format (0900): ") 
-	end = input("Enter your time-out time in military format (1700): ") 
+	"""Make a jazz noise here"""
+	args = get_args()
+	start = str(args.start)
+	end = str(args.end)
+	wage = int(float(args.wage))
 
-	if len(start)<4 or len(end)<4:
-		print('Error: Enter time-in with 4 digits in military format')
-		sys.exit(1)
 
-	wage = int(float(input("Enter you hourly wage (8.00): ")))
-
-	# convert user input to datetime instances
-	start_t = datetime.time(hour=int(start[0:2]), minute=int(start[2:4]))
-	end_t = datetime.time(hour=int(end[0:2]), minute=int(end[2:4]))
+        # convert user input to datetime instances
+	start_t=datetime.time(hour=int(start[0:2]), minute=int(start[3:5]))
+	end_t = datetime.time(hour=int(end[0:2]), minute=int(end[3:5]))
 	delta_t = datetime.timedelta(
-		hours = (end_t.hour - start_t.hour),minutes = (end_t.minute - start_t.minute))
+                hours = (end_t.hour - start_t.hour),minutes = (end_t.minute - start_t.minute))
 
 	hours=(delta_t.seconds/3600)
 
-	# calculating wage
+        # calculating wage
 	amt = hours* wage
-	
-	# output
+
+        # output
 	print('You started at {} and ended at {}'.format(start_t, end_t))
 	print('You worked for {} hours'.format(delta_t))
 	print('You earned ${0:.2f}'.format(round(amt, 2)))
 
+
 # --------------------------------------------------
-main()
+if __name__ == '__main__':
+    main()
