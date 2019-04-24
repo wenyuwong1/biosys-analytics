@@ -99,18 +99,6 @@ def test_dist():
 def uniq_words(file, min_len):
 	
 # --------------------------------------------------
-def test_common():
-    w1 = ['foo', 'bar', 'quux']
-    w2 = ['bar', 'baz', 'faa']
-
-    assert common(w1, w2, 0) == [('bar', 'bar', 0)]
-
-    assert common(w1, w2, 1) == [('bar', 'bar', 0), ('bar', 'baz', 1)]
-
-    assert common(w1, w2, 2) == [('bar', 'bar', 0), ('bar', 'baz', 1),
-                                 ('bar', 'faa', 2), ('foo', 'faa', 2)]
-
-# -------------------------------------------------
 def common(words1, words2, distance):
 	final=list(zip(words1, word2, distance))
 	return final 
