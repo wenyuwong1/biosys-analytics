@@ -9,7 +9,7 @@ import argparse
 import sys
 import os
 import logging
-import tabulate
+from tabulate import tabulate
 
 # --------------------------------------------------
 def get_args():
@@ -96,6 +96,37 @@ def test_dist():
         d = dist(s1, s2)
         assert d == n
 # --------------------------------------------------
+def uniq_words(file, min_len):
+	
+# --------------------------------------------------
+def test_common():
+    w1 = ['foo', 'bar', 'quux']
+    w2 = ['bar', 'baz', 'faa']
+
+    assert common(w1, w2, 0) == [('bar', 'bar', 0)]
+
+    assert common(w1, w2, 1) == [('bar', 'bar', 0), ('bar', 'baz', 1)]
+
+    assert common(w1, w2, 2) == [('bar', 'bar', 0), ('bar', 'baz', 1),
+                                 ('bar', 'faa', 2), ('foo', 'faa', 2)]
+
+# -------------------------------------------------
+def common(words1, words2, distance):
+	final=list(zip(words1, word2, distance))
+	return final 
+# -------------------------------------------------
+def test_common():
+    w1 = ['foo', 'bar', 'quux']
+    w2 = ['bar', 'baz', 'faa']
+
+    assert common(w1, w2, 0) == [('bar', 'bar', 0)]
+
+    assert common(w1, w2, 1) == [('bar', 'bar', 0), ('bar', 'baz', 1)]
+
+    assert common(w1, w2, 2) == [('bar', 'bar', 0), ('bar', 'baz', 1),
+                                 ('bar', 'faa', 2), ('foo', 'faa', 2)]
+
+# --------------------------------------------------
 def main():
 	"""Make a jazz noise here"""
 	args = get_args()
@@ -120,9 +151,34 @@ def main():
 
 	logging.debug('file1={}, file2={}'.format(files[0], files[1]))
 
-	if distance <= 0:
+	if distance < 0:
 		print('--distance "{}" must be > 0'.format(distance))
 		exit(1)
+
+
+	word1=[]
+	word2=[]
+	with open(files[0]) as fh1:
+		word1=[word for line in fh1 for word in line.split()]
+
+	with open(files[1]) as fh2:
+		word2=[word for line in fh2 for word in line.split()]
+
+	w1=word1
+	w2=word2
+	
+	combo=list(zip(word1, word2))
+	hamm=[]
+	for word1, word2 in combo:
+		d=dist(word1, word2)
+		hamm.append(d)
+		logging.debug(msg='s1= {}, s2= {}, d= {}'.format(word1, word2, d))
+
+	final=list(zip(w1, w2, hamm))
+
+	for w1, w2, hamm in final:
+		print('{}\t{}\t{}'.format(w1, w2, hamm))
+
 
 # --------------------------------------------------
 if __name__ == '__main__':

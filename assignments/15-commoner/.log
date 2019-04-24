@@ -1,1 +1,10 @@
 DEBUG:root:file1=data/fox.txt, file2=data/fox.txt
+DEBUG:root:s1= The, s2= The, d= 0
+DEBUG:root:s1= quick, s2= quick, d= 0
+DEBUG:root:s1= brown, s2= brown, d= 0
+DEBUG:root:s1= fox, s2= fox, d= 0
+DEBUG:root:s1= jumps, s2= jumps, d= 0
+DEBUG:root:s1= over, s2= over, d= 0
+DEBUG:root:s1= the, s2= the, d= 0
+DEBUG:root:s1= lazy, s2= lazy, d= 0
+DEBUG:root:s1= dog., s2= dog., d= 0
