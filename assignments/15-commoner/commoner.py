@@ -9,6 +9,7 @@ import argparse
 import sys
 import os
 import logging
+import tabulate
 
 # --------------------------------------------------
 def get_args():
