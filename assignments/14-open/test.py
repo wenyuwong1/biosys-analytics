@@ -32,7 +32,7 @@ def test_bad_input():
     bad_time = random_num()
     rv, out = getstatusoutput('{} {} {}'.format(prg, bad_time, bad_time))
     assert rv >= 0
-    assert re.match("error", out, re.IGNORECASE)
+    assert re.search("error", out, re.IGNORECASE)
 
 # --------------------------------------------------
 def test_ok1():

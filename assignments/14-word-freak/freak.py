@@ -2,11 +2,12 @@
 """
 Author : wwong3
 Date   : 2019-April-19
-Purpose: Rock the Casbah
+Purpose: Word count
 """
 
 import argparse
 import sys
+import os
 import re
 from collections import Counter
 from re import split
@@ -15,7 +16,7 @@ from re import split
 def get_args():
     """get command-line arguments"""
     parser = argparse.ArgumentParser(
-        description='Argparse Python script',
+        description='Sorting by word or frequency',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument(
@@ -53,15 +54,17 @@ def die(msg='Something bad happened'):
     sys.exit(1)
 
 # --------------------------------------------------
-def word_count(file):
-	counter=Counter()
+def word_count(file,counter):
+	#counter=Counter()
 	with open(file, 'r') as fh:
-		for line in fh:
-			line=line.strip().lower()
-			if not line:
-				continue
-			counter.update(x for x in split("[^a-zA-Z0-9]+", line) if x)
+		line=fh.read().rstrip().lower().split()
+		word_list=[]
+		for word in line:
+			word_list.append(re.sub('[^a-zA-Z0-9]', '', word))
+		word_list=list(filter(None, word_list)) #removes empty string from word_list
+		counter.update(word_list)
 	return counter
+
 # --------------------------------------------------
 def main():
 	"""Make a jazz noise here"""
@@ -70,21 +73,20 @@ def main():
 	sorto = args.sort
 	mini = args.min
 	
-	lst={}
+	lst = Counter()
 	for file in files:
-		lst=word_count(file)	
-		
+		lst=word_count(file,lst)
+
 	if "frequency" in sorto:
 		pairs = sorted([(x[1], x[0]) for x in lst.items()])
 		for count, word in sorted(pairs):
 			if mini!=None:
-				if count > mini:
+				if count >= mini:
 					print('{:20} {}'.format(word, count))
-
-	if "word" in sorto:
+	elif "word" in sorto:
 		for word, count in sorted(lst.items()):
 			if mini!=None:
-				if count > mini:
+				if count >= mini:
 					print('{:20} {}'.format(word, count))
 
 # --------------------------------------------------

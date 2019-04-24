@@ -36,9 +36,9 @@ def get_args():
         '-w',
         '--wage',
         help='The wage a person earns (ie: 9.25)',
-        metavar='str',
-        type=str,
-        default=8)
+        metavar='float',
+        type=float,
+        default=8.0)
 
     return parser.parse_args()
 
@@ -62,7 +62,7 @@ def main():
 	args = get_args()
 	start = str(args.start)
 	end = str(args.end)
-	wage = int(float(args.wage))
+	wage = args.wage
 
 
         # convert user input to datetime instances
