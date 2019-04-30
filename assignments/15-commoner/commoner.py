@@ -120,7 +120,7 @@ def uniq_words(file, min_len):
 
 # --------------------------------------------------
 def common(words1, words2, distance):
-	same=list()
+	same=[]
 	for w1, w2 in sorted(product(words1, words2)):
 		dis=dist(w1, w2)
 		if dis<=distance:
