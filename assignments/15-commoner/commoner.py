@@ -124,8 +124,8 @@ def common(words1, words2, distance):
 	for w1, w2 in sorted(product(words1, words2)):
 		dis=dist(w1, w2)
 		if dis<=distance:
-			tuple=(w1, w2, dis)
-			same.append(tuple)
+			lst=(w1, w2, dis)
+			same.append(lst)
 	return same
 
 # -------------------------------------------------
@@ -151,18 +151,15 @@ def main():
 	debug = args.debug
 	table = args.table
 
-
 	logging.basicConfig(
 		filename=logfile,
 		filemode='w',
 		level=logging.DEBUG if args.debug else logging.CRITICAL)
 
-
 	logging.debug('file1={}, file2={}'.format(files[0], files[1]))
 
 	if distance < 0:
 		die('--distance "{}" must be > 0'.format(distance))
-
 
 	words1=uniq_words(files[0], mini)
 	words2=uniq_words(files[1], mini)
@@ -174,8 +171,8 @@ def main():
 			print(tabulate(final, headers=["word1", "word2", "distance"], tablefmt="psql"))
 		else:
 			print('{}\t{}\t{}'.format('word1', 'word2', 'distance'))
-			for tuple in final:
-				print('{}\t{}\t{}'.format(tuple[0], tuple[1], tuple[2]))
+			for lst in final:
+				print('{}\t{}\t{}'.format(lst[0], lst[1], lst[2]))
 	else:
 		print('No words in common.')
 
