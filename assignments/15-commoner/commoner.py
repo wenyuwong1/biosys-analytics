@@ -9,6 +9,9 @@ import argparse
 import sys
 import os
 import logging
+import io
+import re
+from itertools import product
 from tabulate import tabulate
 
 # --------------------------------------------------
@@ -19,7 +22,7 @@ def get_args():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument(
-        'files', metavar='FILE', help='Input files', nargs=2)
+        'files', metavar='FILE', help='Input files', nargs=2, type=argparse.FileType('r', encoding='UTF-8'))
 
     parser.add_argument(
         '-m',
@@ -82,7 +85,11 @@ def dist(s1, s2):
 	for chr1, chr2 in zip(s1, s2):
 		if chr1 != chr2:
 			diffs+=1
-	return diffs+len_diff
+	d=diffs+len_diff
+
+	logging.debug('s1={}, s2={}, d={}'.format(s1, s2, d))
+
+	return d
 
 # --------------------------------------------------
 def test_dist():
@@ -97,11 +104,30 @@ def test_dist():
         assert d == n
 # --------------------------------------------------
 def uniq_words(file, min_len):
-	
+	"""find unique words in a file """
+	words=set()	
+	for line in file:
+		for word in line.lower().split():
+			good=(re.sub('[^a-zA-Z0-9]', '', word))
+			if len(good)==0:
+				continue
+			if len(good)>=min_len:
+				words.add(good)
+
+	logging.debug('{}'.format(words))
+
+	return words
+
 # --------------------------------------------------
 def common(words1, words2, distance):
-	final=list(zip(words1, word2, distance))
-	return final 
+	same=list()
+	for w1, w2 in sorted(product(words1, words2)):
+		dis=dist(w1, w2)
+		if dis<=distance:
+			tuple=(w1, w2, dis)
+			same.append(tuple)
+	return same
+
 # -------------------------------------------------
 def test_common():
     w1 = ['foo', 'bar', 'quux']
@@ -127,46 +153,33 @@ def main():
 
 
 	logging.basicConfig(
-		filename='.log',
+		filename=logfile,
 		filemode='w',
 		level=logging.DEBUG if args.debug else logging.CRITICAL)
-
-
-	for fname in files:
-		if not os.path.isfile(fname):
-			die(msg='"{}" is not a file'.format(fname))
 
 
 	logging.debug('file1={}, file2={}'.format(files[0], files[1]))
 
 	if distance < 0:
-		print('--distance "{}" must be > 0'.format(distance))
-		exit(1)
+		die('--distance "{}" must be > 0'.format(distance))
 
 
-	word1=[]
-	word2=[]
-	with open(files[0]) as fh1:
-		word1=[word for line in fh1 for word in line.split()]
+	words1=uniq_words(files[0], mini)
+	words2=uniq_words(files[1], mini)
+	final=common(words1, words2, distance)
 
-	with open(files[1]) as fh2:
-		word2=[word for line in fh2 for word in line.split()]
+	final.sort()
+	if final:
+		if table:
+			print(tabulate(final, headers=["word1", "word2", "distance"], tablefmt="psql"))
+		else:
+			print('{}\t{}\t{}'.format('word1', 'word2', 'distance'))
+			for tuple in final:
+				print('{}\t{}\t{}'.format(tuple[0], tuple[1], tuple[2]))
+	else:
+		print('No words in common.')
 
-	w1=word1
-	w2=word2
 	
-	combo=list(zip(word1, word2))
-	hamm=[]
-	for word1, word2 in combo:
-		d=dist(word1, word2)
-		hamm.append(d)
-		logging.debug(msg='s1= {}, s2= {}, d= {}'.format(word1, word2, d))
-
-	final=list(zip(w1, w2, hamm))
-
-	for w1, w2, hamm in final:
-		print('{}\t{}\t{}'.format(w1, w2, hamm))
-
 
 # --------------------------------------------------
 if __name__ == '__main__':
